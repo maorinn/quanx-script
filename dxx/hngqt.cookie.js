@@ -9,6 +9,7 @@ if (cookieVal) {
     chavy.log(`[${cookieName}] 获取Cookie: 成功, cookie: ${value}`)
   }
 }
+$.done()
 
 function Env(name, opts) {
     class Http {
