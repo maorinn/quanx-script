@@ -3,11 +3,13 @@ const key = "hngqt-cookie"
 const value = $request.headers['Cookie']
 const cookieName = '青年湖南'
 
-if (cookieVal) {
+if (value) {
   if ($.setdata(value, key)) {
-    chavy.msg(`${cookieName}`, '获取Cookie: 成功', '')
-    chavy.log(`[${cookieName}] 获取Cookie: 成功, cookie: ${value}`)
+    $.msg(`${cookieName}`, '获取Cookie: 成功', '')
+    $.log(`[${cookieName}] 获取Cookie: 成功, cookie: ${value}`)
   }
+}else{
+  $.msg(`${cookieName}`, '获取Cookie: 失败', '')
 }
 $.done()
 
