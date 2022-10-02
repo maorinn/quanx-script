@@ -1,4 +1,5 @@
 const $ = new Env('湖南健康码');
+console.log("$response.body->>>",$response.body);
 const body = JSON.parse($response.body);
 // 获取前一天时间并格式化 YYYY-MM-DD HH:mm
 const date = new Date(new Date().getTime() - 24 * 60 * 60 * 1000).toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '');
