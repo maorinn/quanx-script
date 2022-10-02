@@ -3,7 +3,7 @@ const body = JSON.parse($response.body);
 // 获取前一天时间并格式化 YYYY-MM-DD HH:mm
 const date = new Date(new Date().getTime() - 24 * 60 * 60 * 1000).toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '');
 
-body.dat[0]['SBRQ'] = date
+body.data[0]['SBRQ'] = date
 
 $done({body: JSON.stringify(body)});
 
