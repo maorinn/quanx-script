@@ -3,9 +3,11 @@ console.log("$response.body->>>",$response.body);
 let body = $response.body;
 // 获取前一天时间并格式化 YYYY-MM-DD HH:mm
 const date = new Date(new Date().getTime() - 24 * 60 * 60 * 1000).toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '');
-if(bode.indexOf(`Object(O["a"])(e.JCRQ,i+e.sign`)!=-1){
+if(body.indexOf(`Object(O["a"])(e.JCRQ,i+e.sign`)!=-1){
     console.log("替换内容->>>>>>>>>>");
     body = body.replace(`Object(O["a"])(e.JCRQ,i+e.sign`,date);
+}else{
+    console.log("不替换内容->>>>>>>>>>");
 }
 $done({body: JSON.stringify(body)});
 
